@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>jQuery Knob demo</title>
+        <title>Good Morning</title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
         <script src="dist/jquery.knob.min.js"></script>
@@ -14,7 +14,8 @@
                         console.log("change : " + value);
                     },
                     release : function (value) {
-                        $.post("api.spark.io/v1/devices/54ff6d066672524818311167/dawnStart", "access_token= 04c1271497bff4a7cc3deaa47131709b866646fd")
+                        $.post("api.spark.io/v1/devices/54ff6d066672524818311167/dawnStart", 
+                        	   access_token: "04c1271497bff4a7cc3deaa47131709b866646fd");
                         console.log("release : " + value);
                     },
                     cancel : function () {
