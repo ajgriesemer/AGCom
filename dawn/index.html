@@ -15,7 +15,7 @@
                     },
                     release : function (value) {
                         $.post("api.spark.io/v1/devices/54ff6d066672524818311167/dawnStart", 
-                        	   access_token: "04c1271497bff4a7cc3deaa47131709b866646fd");
+                        	   {access_token: "04c1271497bff4a7cc3deaa47131709b866646fd"});
                         console.log("release : " + value);
                     },
                     cancel : function () {
