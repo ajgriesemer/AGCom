@@ -125,6 +125,7 @@ input, select {
 	display: block;
 	float:left;
 	margin: 1% 0.8% 1% 0.8%;
+	text-align: center;
 }
 /*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
 
