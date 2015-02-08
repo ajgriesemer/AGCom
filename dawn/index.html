@@ -36,7 +36,7 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/dawnStart", 
                     	   {access_token: "04c1271497bff4a7cc3deaa47131709b866646fd",
-                        	args: String.fromCharCode(0, value)
+                        	args: String.fromCharCode(1, value)
                     	   });
 					backRed = value;
                     console.log("release Red: " + value);
@@ -55,7 +55,7 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/dawnStart", 
                     	   {access_token: "04c1271497bff4a7cc3deaa47131709b866646fd",
-                        	args: String.fromCharCode(1, value)
+                        	args: String.fromCharCode(2, value)
                     	   });
 					backGreen = value;
                     console.log("release Green: " + value);
@@ -74,7 +74,7 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/dawnStart", 
                     	   {access_token: "04c1271497bff4a7cc3deaa47131709b866646fd",
-                        	args: String.fromCharCode(2, value)
+                        	args: String.fromCharCode(3, value)
                     	   });
 					backBlue = value;
                     console.log("release Blue: " + value);
@@ -93,7 +93,7 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/dawnStart", 
                     	   {access_token: "04c1271497bff4a7cc3deaa47131709b866646fd",
-                        	args: String.fromCharCode(3, value)
+                        	args: String.fromCharCode(4, value)
                     	   });
 					backWhite = value;
                     console.log("release White: " + value);
