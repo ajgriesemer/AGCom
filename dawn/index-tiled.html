@@ -25,31 +25,20 @@
     <script src="js/jquery.knob.min.js"></script>
     <script>
         $(function($) {
-			var Red = 0;
-			var Green = 0;
-			var Blue = 0;
-			var White = 0;
-			function setBackground(r, g, b,w){
-				r = Math.round(((w/255)*r/2) + r/2);
-				g = Math.round(((w/255)*g/2) + g/2);
-				b = Math.round(((w/255)*b/2) + b/2);
-				var color = "#"+("0" + r.toString(16)).slice(-2)+("0" + g.toString(16)).slice(-2) + ("0" + b.toString(16)).slice(-2);
-				
-                console.log(color);
-				document.body.style.background = color;
-			}
-			
-            $(".Red").knob({
+			var backRed;
+			var backGreen;
+			var backBlue;
+			var backWhite;
+            $(".knobRed").knob({
                 change : function (value) {
                     console.log("change Red: " + value);
-					Red = Math.round(value);
-                    setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "70c36e0c081d4c6876e35414515fdec339440349",
                         	args: String.fromCharCode(1, value)
                     	   });
+					backRed = value;
                     console.log("release Red: " + value);
                 },
                 cancel : function () {
@@ -59,11 +48,9 @@
                     return value + '%';
                 },*/
             });
-            $(".Green").knob({
+            $(".knobGreen").knob({
                 change : function (value) {
                     console.log("change Green: " + value);
-					Green = Math.round(value);
-                    setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
@@ -80,11 +67,9 @@
                     return value + '%';
                 },*/
             });
-            $(".Blue").knob({
+            $(".knobBlue").knob({
                 change : function (value) {
                     console.log("change Blue: " + value);
-					Blue = Math.round(value);
-                    setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
@@ -101,11 +86,9 @@
                     return value + '%';
                 },*/
             });
-            $(".White").knob({
+            $(".knobWhite").knob({
                 change : function (value) {
                     console.log("change White: " + value);
-					White = Math.round(value);
-                    setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
@@ -132,20 +115,18 @@
 	<div class="header">
 	</div>
 	<div class="section group">
-            <div style="position:relative;width:350px;margin:auto">
-                <div style="position:absolute;left:10px;top:10px">
-                    <input class="knob Red" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="255" data-step="1" data-bgColor="#300" data-fgColor="#E33" data-displayInput=false data-width="300" data-height="300" data-thickness=".22">
-                </div>
-                <div style="position:absolute;left:50px;top:50px">
-                    <input class="knob Green" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="255" data-step="1" data-bgColor="#030" data-fgColor="#3E3" data-displayInput=false data-width="220" data-height="220" data-thickness=".30">
-                </div>
-                <div style="position:absolute;left:90px;top:90px">
-                    <input class="knob Blue" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="255" data-step="1" data-bgColor="#003"data-fgColor="#33E" data-displayInput=false data-width="140" data-height="140" data-thickness=".45">
-                </div>
-                <div style="position:absolute;left:130px;top:130px">
-                    <input class="knob White" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="255" data-step="1" data-bgColor="#222" data-fgColor="#EEE" data-displayInput=false data-width="60" data-height="60" data-thickness=".9">
-                </div>
-            </div>
+		<div class="col box">
+    		<input class="knobRed" data-angleOffset=-125 data-angleArc=250 data-fgColor="#E66" data-width="90%" value="0">
+		</div>
+		<div class="col box">
+    		<input class="knobGreen" data-angleOffset=-125 data-angleArc=250 data-fgColor="#6E6" data-width="90%" value="0">
+		</div>
+		<div class="col box">
+    		<input class="knobBlue" data-angleOffset=-125 data-angleArc=250 data-fgColor="#66E" data-width="90%" value="0">
+		</div>
+		<div class="col box">
+    		<input class="knobWhite" data-angleOffset=-125 data-angleArc=250 data-fgColor="#EEE" data-width="90%" value="0">
+		</div>
 	</div>
 </body>
 </html>
