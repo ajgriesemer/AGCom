@@ -48,7 +48,7 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
-                        	args: String.fromCharCode(1, value)
+                        	args: String.fromCharCode(1, Red)
                     	   });
                     console.log("release Red: " + value);
                 },
@@ -68,7 +68,7 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
-                        	args: String.fromCharCode(2, value)
+                        	args: String.fromCharCode(2, Green)
                     	   });
 					backGreen = value;
                     console.log("release Green: " + value);
@@ -89,7 +89,7 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
-                        	args: String.fromCharCode(3, value)
+                        	args: String.fromCharCode(3, Blue)
                     	   });
 					backBlue = value;
                     console.log("release Blue: " + value);
@@ -110,7 +110,7 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
-                        	args: String.fromCharCode(4, value)
+                        	args: String.fromCharCode(4, White)
                     	   });
 					backWhite = value;
                     console.log("release White: " + value);
@@ -146,6 +146,9 @@
                     <input class="knob White" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="255" data-step="1" data-bgColor="#222" data-fgColor="#EEE" data-displayInput=false data-width="60" data-height="60" data-thickness=".9">
                 </div>
             </div>
+	</div>
+	<div class="button">
+		<a href="#" class="myButton">Motion Detect</a>
 	</div>
 </body>
 </html>
