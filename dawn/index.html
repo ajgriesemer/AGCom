@@ -48,10 +48,9 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
-                        	args: String.fromCharCode(1, Red)
+                        	args: String.fromCharCode(1, value)
                     	   });
                     console.log("release Red: " + value);
-                    console.log("release Red: " + String.fromCharCode(1, Red));
                 },
                 cancel : function () {
                     console.log("cancel Red: ", this);
@@ -69,9 +68,8 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
-                        	args: String.fromCharCode(2, Green)
+                        	args: String.fromCharCode(2, value)
                     	   });
-					backGreen = value;
                     console.log("release Green: " + value);
                 },
                 cancel : function () {
@@ -90,9 +88,8 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
-                        	args: String.fromCharCode(3, Blue)
+                        	args: String.fromCharCode(3, value)
                     	   });
-					backBlue = value;
                     console.log("release Blue: " + value);
                 },
                 cancel : function () {
@@ -111,9 +108,8 @@
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
-                        	args: String.fromCharCode(4, White)
+                        	args: String.fromCharCode(4, value)
                     	   });
-					backWhite = value;
                     console.log("release White: " + value);
                 },
                 cancel : function () {
