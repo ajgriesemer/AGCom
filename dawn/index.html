@@ -23,6 +23,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
     <script src="js/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/sparkjs/0.5.9/spark.min.js"></script>
     <script>
         $(function($) {
 			var Red = 0;
@@ -46,9 +47,8 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
-                    $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
-                    	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
-                        	args: String.fromCharCode(1, value)
+                    $.post($.ajax(({url: 'php/function.php?method=controlPanel'})), 
+                    	   {args: String.fromCharCode(1, value)
                     	   });
                     console.log("release Red: " + value);
                 },
@@ -67,7 +67,7 @@
                 },
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
-                    	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
+                    	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(2, value)
                     	   });
                     console.log("release Green: " + value);
@@ -87,7 +87,7 @@
                 },
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
-                    	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
+                    	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(3, value)
                     	   });
                     console.log("release Blue: " + value);
@@ -107,7 +107,7 @@
                 },
                 release : function (value) {
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
-                    	   {access_token: "cb25aafd9e657eeefe9ba16913f134c8ffcc691c",
+                    	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(4, value)
                     	   });
                     console.log("release White: " + value);
