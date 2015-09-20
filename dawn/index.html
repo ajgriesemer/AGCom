@@ -48,7 +48,8 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
-                	url = "php/function.php?method=controlPanel&" + String.fromCharCode(2, value)
+                	//url = "php/function.php?method=controlPanel&" + String.fromCharCode(2, value)
+                	url = "php/function.php?method=sunriseStart"
                     $.ajax(({url: url})) 
                     console.log("release Red: " + value);
                     console.log(url);
