@@ -30,6 +30,7 @@
 			var Green = 0;
 			var Blue = 0;
 			var White = 0;
+			var url;
 			function setBackground(r, g, b,w){
 				r = Math.round(((w/255)*r/2) + r/2);
 				g = Math.round(((w/255)*g/2) + g/2);
@@ -47,15 +48,15 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
-                    $.ajax(({url: 'php/function.php?method=controlPanel'})) 
+                	url = "php/function.php?method=controlPanel&" + String.fromCharCode(2, value)
+                    $.ajax(({url: url})) 
                     console.log("release Red: " + value);
+                    console.log(url);
+
                 },
                 cancel : function () {
                     console.log("cancel Red: ", this);
                 },
-                /*format : function (value) {
-                    return value + '%';
-                },*/
             });
             $(".Green").knob({
                 change : function (value) {
