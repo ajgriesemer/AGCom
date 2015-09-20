@@ -47,9 +47,7 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
-                    $.post($.ajax(({url: 'php/function.php?method=controlPanel'})), 
-                    	   {args: String.fromCharCode(1, value)
-                    	   });
+                    $.ajax(({url: 'php/function.php?method=controlPanel'})) 
                     console.log("release Red: " + value);
                 },
                 cancel : function () {
