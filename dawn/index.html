@@ -59,11 +59,12 @@
 	                	value_byte1 = 128;
 	                	value_byte2 = value-128;
                 	}
+                	url = String.fromCharCode(1, value_byte1, value_byte2)
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(1, value_byte1, value_byte2)
                     	   });
-                    console.log(value_byte1, " ", value_byte2);
+                    console.log(value_byte1, " ", value_byte2, url);
                 },
                 cancel : function () {
                     console.log("cancel Red: ", this);
