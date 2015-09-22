@@ -31,7 +31,8 @@
 			var Blue = 0;
 			var White = 0;
 			var url;
-			var data = new Uint8Array(3);
+			var value_byte1;
+			var value_byte2;
 			
 			function setBackground(r, g, b,w){
 				r = Math.round(((w/255)*r/2) + r/2);
@@ -43,6 +44,7 @@
 				document.body.style.background = color;
 			}
 			
+			
             $(".Red").knob({
                 change : function (value) {
                     console.log("change Red: " + value);
@@ -50,12 +52,16 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
-                	data[0] = 1;
-                	data[1] = value;
-                	data[2] = 0;
+                	if(value <= 128){
+	                	value_byte1 = value;
+	                	value_byte2 = 0;
+                	} else {
+	                	value_byte1 = 128;
+	                	value_byte2 = value-128;
+                	}
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
-                        	args: data
+                        	args: String.fromCharCode(1, value_byte1, value_byte2)
                     	   });
                     console.log(data);
                 },
