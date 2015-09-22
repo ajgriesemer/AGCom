@@ -45,10 +45,6 @@
                 change : function (value) {
                     console.log("change Red: " + value);
 					Red = Math.round(value);
-                    $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
-                    	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
-                        	args: String.fromCharCode(1, value)
-                    	   });
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
