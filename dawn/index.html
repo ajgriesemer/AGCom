@@ -31,7 +31,7 @@
 			var Blue = 0;
 			var White = 0;
 			var url;
-			var data = new Uint8Array(2);
+			var data = new Uint8Array(3);
 			
 			function setBackground(r, g, b,w){
 				r = Math.round(((w/255)*r/2) + r/2);
@@ -52,7 +52,7 @@
                 release : function (value) {
                 	data[0] = 1;
                 	data[1] = value;
-                	data[1] = 0;
+                	data[2] = 0;
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: data
