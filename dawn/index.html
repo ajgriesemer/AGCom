@@ -48,9 +48,9 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
-                    $.post("php/function.php", 
-                    	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
-                        	args: String.fromCharCode(2, value)
+                	url = "php/function.php?method=controlPanel"
+                    $.post(url, 
+                    	   {args: String.fromCharCode(1, value)
                     	   });
                     console.log("release Red: " + value);
                     console.log(url);
