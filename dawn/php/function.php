@@ -1,6 +1,6 @@
 <?php
 $method = $_REQUEST["method"];
-if(!$method) die("device or method param missing\n");
+if(!$method) die("method param missing\n");
 
 // add access token
 $_REQUEST["access_token"] = "12399....123123";
