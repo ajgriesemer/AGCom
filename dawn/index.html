@@ -30,7 +30,7 @@
 			var Green = 0;
 			var Blue = 0;
 			var White = 0;
-			var url;
+			var analog_values = new uint8array;
 			var value_byte1;
 			var value_byte2;
 			
@@ -44,6 +44,17 @@
 				document.body.style.background = color;
 			}
 			
+			function breakAnalogValue(v){
+				var return_values = new uint8array;
+            	if(v < 128){
+                	v = v;
+                	v = 0;
+            	} else {
+                	return_values[0] = 127;
+                	return_values[1] = v-127;
+            	}
+				return return_values;
+			}
 			
             $(".Red").knob({
                 change : function (value) {
@@ -52,19 +63,12 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
-                	if(value < 128){
-	                	value_byte1 = value;
-	                	value_byte2 = 0;
-                	} else {
-	                	value_byte1 = 127;
-	                	value_byte2 = value-127;
-                	}
-                	url = String.fromCharCode(1, value_byte1, value_byte2)
+                	analog_values = breakAnalogValues(value);
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
-                        	args: String.fromCharCode(1, value_byte1, value_byte2)
+                        	args: String.fromCharCode(1, analog_values)
                     	   });
-                    console.log(value_byte1, value_byte2, url);
+                    console.log(analog_values);
                 },
                 cancel : function () {
                     console.log("cancel Red: ", this);
