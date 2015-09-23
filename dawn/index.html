@@ -34,6 +34,21 @@
 			var value_byte1;
 			var value_byte2;
 			
+			$(document).ready(function(){
+				$.get("https://api.spark.io/v1/devices/54ff6d066672524818311167/red?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
+						function(data){
+							Red = data;});
+				$.get("https://api.spark.io/v1/devices/54ff6d066672524818311167/green?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
+						function(data){
+							Green = data;});
+				$.get("https://api.spark.io/v1/devices/54ff6d066672524818311167/blue?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
+						function(data){
+							Blue = data;});
+				$.get("https://api.spark.io/v1/devices/54ff6d066672524818311167/white?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
+						function(data){
+							White = data;});
+                setBackground(Red,Green,Blue,White);
+            }) 
 			function setBackground(r, g, b,w){
 				r = Math.round(((w/255)*r/2) + r/2);
 				g = Math.round(((w/255)*g/2) + g/2);
@@ -150,7 +165,7 @@
             <div style="position:relative;width:300px;margin:auto">
                 <div style="position:absolute;left:10px;top:10px">
                     <input class="knob Red" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="254" data-step="1" data-bgColor="#300" data-fgColor="#E33" data-displayInput=false data-width="300" data-height="300" data-thickness=".22">
-                </div>
+                </div> 
                 <div style="position:absolute;left:50px;top:50px">
                     <input class="knob Green" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="254" data-step="1" data-bgColor="#030" data-fgColor="#3E3" data-displayInput=false data-width="220" data-height="220" data-thickness=".30">
                 </div>
