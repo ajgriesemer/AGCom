@@ -52,12 +52,12 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
-                	if(value <= 128){
-	                	value_byte1 = 65;
-	                	value_byte2 = 66;
+                	if(value < 128){
+	                	value_byte1 = value;
+	                	value_byte2 = 0;
                 	} else {
-	                	value_byte1 = 67;
-	                	value_byte2 = 68;
+	                	value_byte1 = 127;
+	                	value_byte2 = value-127;
                 	}
                 	url = String.fromCharCode(1, value_byte1, value_byte2)
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
