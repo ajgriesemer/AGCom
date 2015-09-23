@@ -81,9 +81,10 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
+                	analog_values = breakAnalogValue(value);
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
-                        	args: String.fromCharCode(2, value)
+                        	args: String.fromCharCode(2, analog_values[0], analog_values[1])
                     	   });
                     console.log("release Green: " + value);
                 },
@@ -101,9 +102,10 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
+                	analog_values = breakAnalogValue(value);
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
-                        	args: String.fromCharCode(3, value)
+                        	args: String.fromCharCode(3, analog_values[0], analog_values[1])
                     	   });
                     console.log("release Blue: " + value);
                 },
@@ -121,9 +123,10 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
+                	analog_values = breakAnalogValue(value);
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
-                        	args: String.fromCharCode(4, value)
+                        	args: String.fromCharCode(4, analog_values[0], analog_values[1])
                     	   });
                     console.log("release White: " + value);
                 },
