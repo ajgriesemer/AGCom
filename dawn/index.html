@@ -30,8 +30,7 @@
 			var Green = 0;
 			var Blue = 0;
 			var White = 0;
-			var base = new Uint8Array(1);
-			var analog_values = new Uint8Array(3);
+			var analog_values = new Uint8Array(2);
 			var value_byte1;
 			var value_byte2;
 			
@@ -64,11 +63,10 @@
                     setBackground(Red,Green,Blue,White);
                 },
                 release : function (value) {
-                	base = 1;
-                	analog_values = base.concat(breakAnalogValue(value));
+                	analog_values = breakAnalogValue(value);
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
-                        	args: String.fromCharCode.apply(null,analog_values)
+                        	args: String.fromCharCode(1, analog_values[0], analog_values[1])
                     	   });
                     console.log(analog_values);
                 },
@@ -162,7 +160,7 @@
             </div>
 	</div>
 	<div class="button">
-		<a href="#" class="myButton">Motion Detectu</a>
+		<a href="#" class="myButton">Motion Detectt</a>
 	</div>
 </body>
 </html>
