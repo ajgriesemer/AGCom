@@ -86,7 +86,7 @@
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(2, analog_values[0], analog_values[1])
                     	   });
-                    console.log("release Green: " + value);
+                    console.log(analog_values);
                 },
                 cancel : function () {
                     console.log("cancel Green: ", this);
@@ -107,7 +107,7 @@
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(3, analog_values[0], analog_values[1])
                     	   });
-                    console.log("release Blue: " + value);
+                    console.log(analog_values);
                 },
                 cancel : function () {
                     console.log("cancel Blue: ", this);
@@ -128,7 +128,7 @@
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(4, analog_values[0], analog_values[1])
                     	   });
-                    console.log("release White: " + value);
+                    console.log(analog_values);
                 },
                 cancel : function () {
                     console.log("cancel White: ", this);
@@ -152,13 +152,13 @@
                     <input class="knob Red" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="254" data-step="1" data-bgColor="#300" data-fgColor="#E33" data-displayInput=false data-width="300" data-height="300" data-thickness=".22">
                 </div>
                 <div style="position:absolute;left:50px;top:50px">
-                    <input class="knob Green" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="255" data-step="1" data-bgColor="#030" data-fgColor="#3E3" data-displayInput=false data-width="220" data-height="220" data-thickness=".30">
+                    <input class="knob Green" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="254" data-step="1" data-bgColor="#030" data-fgColor="#3E3" data-displayInput=false data-width="220" data-height="220" data-thickness=".30">
                 </div>
                 <div style="position:absolute;left:90px;top:90px">
-                    <input class="knob Blue" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="255" data-step="1" data-bgColor="#003"data-fgColor="#33E" data-displayInput=false data-width="140" data-height="140" data-thickness=".45">
+                    <input class="knob Blue" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="254" data-step="1" data-bgColor="#003"data-fgColor="#33E" data-displayInput=false data-width="140" data-height="140" data-thickness=".45">
                 </div>
                 <div style="position:absolute;left:130px;top:130px">
-                    <input class="knob White" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="255" data-step="1" data-bgColor="#222" data-fgColor="#EEE" data-displayInput=false data-width="60" data-height="60" data-thickness=".9">
+                    <input class="knob White" data-angleOffset="-135" data-angleArc="270" data-min="0" data-max="254" data-step="1" data-bgColor="#222" data-fgColor="#EEE" data-displayInput=false data-width="60" data-height="60" data-thickness=".9">
                 </div>
             </div>
 	</div>
