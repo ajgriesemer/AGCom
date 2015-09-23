@@ -47,8 +47,8 @@
 			function breakAnalogValue(v){
 				var return_values = new Uint8Array(2);
             	if(v < 128){
-                	v = v;
-                	v = 0;
+                	return_values[0] = v;
+                	return_values[1] = 0;
             	} else {
                 	return_values[0] = 127;
                 	return_values[1] = v-127;
@@ -66,7 +66,7 @@
                 	analog_values = breakAnalogValue(value);
                     $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
-                        	args: String.fromCharCode(1, analog_values)
+                        	args: String.fromCharCode(1, apply(analog_values))
                     	   });
                     console.log(analog_values);
                 },
@@ -160,7 +160,7 @@
             </div>
 	</div>
 	<div class="button">
-		<a href="#" class="myButton">Motion Detectw</a>
+		<a href="#" class="myButton">Motion Detecte</a>
 	</div>
 </body>
 </html>
