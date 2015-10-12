@@ -35,19 +35,19 @@
 			var value_byte2;
 			
 			$(document).ready(function(){
-				$.get("https://api.spark.io/v1/devices/54ff6d066672524818311167/red?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
+				$.get("https://api.spark.io/v1/devices/2d002d000847343337373738/red?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
 					function(data, status){
 					Red = data.result;
 					console.log(data.result);	
-					$.get("https://api.spark.io/v1/devices/54ff6d066672524818311167/green?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
+					$.get("https://api.spark.io/v1/devices/2d002d000847343337373738/green?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
 						function(data){
 						Green = data.result;
 						console.log(data.result);
-						$.get("https://api.spark.io/v1/devices/54ff6d066672524818311167/blue?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
+						$.get("https://api.spark.io/v1/devices/2d002d000847343337373738/blue?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
 						function(data){
 						Blue = data.result;
 						console.log(data.result);
-						$.get("https://api.spark.io/v1/devices/54ff6d066672524818311167/white?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
+						$.get("https://api.spark.io/v1/devices/2d002d000847343337373738/white?access_token=e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
 							function(data){
 							White = data.result;
 							console.log(data.result);
@@ -93,7 +93,7 @@
                 },
                 release : function (value) {
                 	analog_values = breakAnalogValue(value);
-                    $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
+                    $.post("https://api.spark.io/v1/devices/2d002d000847343337373738/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(1, analog_values[0], analog_values[1])
                     	   });
@@ -111,7 +111,7 @@
                 },
                 release : function (value) {
                 	analog_values = breakAnalogValue(value);
-                    $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
+                    $.post("https://api.spark.io/v1/devices/2d002d000847343337373738/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(2, analog_values[0], analog_values[1])
                     	   });
@@ -132,7 +132,7 @@
                 },
                 release : function (value) {
                 	analog_values = breakAnalogValue(value);
-                    $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
+                    $.post("https://api.spark.io/v1/devices/2d002d000847343337373738/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(3, analog_values[0], analog_values[1])
                     	   });
@@ -153,7 +153,7 @@
                 },
                 release : function (value) {
                 	analog_values = breakAnalogValue(value);
-                    $.post("https://api.spark.io/v1/devices/54ff6d066672524818311167/controlPanel", 
+                    $.post("https://api.spark.io/v1/devices/2d002d000847343337373738/controlPanel", 
                     	   {access_token: "e5ea3c17b273092f7d5da9cb5c3411a24e3b5d76",
                         	args: String.fromCharCode(4, analog_values[0], analog_values[1])
                     	   });
@@ -192,7 +192,7 @@
             </div>
 	</div>
 	<div class="button">
-		<a href="#" class="myButton">Motion Detectasdf</a>
+		<a href="#" class="myButton">Motion Detect</a>
 	</div>
 </body>
 </html>
